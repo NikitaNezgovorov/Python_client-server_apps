@@ -6,7 +6,7 @@ import сommon.variables
 import logging
 import logs.config_server_log
 from сommon.utils import get_message, send_message
-
+from decos import log
 LOGGER = logging.getLogger('server')
 
 
@@ -70,6 +70,7 @@ class Server:
                              f'полученную от клиента {self.client_address}. Соединение закрывается.')
                 self.client.close()
 
+    @log
     def process_client_message(self, message):
         LOGGER.debug(f'Разбор сообщения от клиента : {message}')
         if сommon.variables.ACTION in message and message[

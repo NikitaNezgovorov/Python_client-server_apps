@@ -9,6 +9,7 @@ from сommon.variables import ACTION, PRESENCE, TIME, USER, ACCOUNT_NAME, RESPON
     DEFAULT_PORT, ADDRESS, PORT
 
 from сommon.utils import get_message, send_message
+from decos import log
 
 LOGGER = logging.getLogger('client')
 
@@ -43,6 +44,7 @@ class Client:
                             f'конечный компьютер отверг запрос на подключение.')
 
     @staticmethod
+    @log
     def server_answer(message):
         LOGGER.debug(f'Разбор сообщения от сервера: {message}')
         if RESPONSE in message:
@@ -52,6 +54,7 @@ class Client:
 
         raise ValueError
 
+    @log
     def create_presence(self, account_name='Guest'):
         out = {
             ACTION: PRESENCE,
