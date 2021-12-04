@@ -3,10 +3,14 @@ import sys
 import json
 import socket
 import time
+import logging
+import logs.config_client_log
 from сommon.variables import ACTION, PRESENCE, TIME, USER, ACCOUNT_NAME, RESPONSE, ERROR, DEFAULT_IP_ADDRESS, \
     DEFAULT_PORT, ADDRESS, PORT
 
 from сommon.utils import get_message, send_message
+
+LOGGER = logging.getLogger('client')
 
 
 class Client:
@@ -14,14 +18,16 @@ class Client:
         try:
             self.server_address = sys.argv[1]
             self.server_port = int(sys.argv[2])
+            LOGGER.info(f'Запущен клиент с параметрами: адрес сервера: '
+                        f'{self.server_address}, порт: {self.server_port}')
             if self.server_port < 1024 or self.server_port > 65535:
-                raise ValueError
+                LOGGER.critical(
+                    f'Попытка запуска клиента с неподходящим номером порта: {self.server_port}. '
+                    f'Допустимы адреса с 1024 до 65535. Клиент завершается.')
+                sys.exit(1)
         except IndexError:
             self.server_address = DEFAULT_IP_ADDRESS
             self.server_port = DEFAULT_PORT
-        except ValueError:
-            print('Укажите порт в корректном формате: Целое число от 1024 до 65535.')
-            sys.exit(1)
 
         self.transport = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.transport.connect((self.server_address, self.server_port))
@@ -29,12 +35,16 @@ class Client:
         send_message(self.transport, self.message_to_server)
         try:
             self.answer = self.server_answer(get_message(self.transport))
-            print(self.answer)
+            LOGGER.info(f'Принят ответ от сервера {self.answer}')
         except(ValueError, json.JSONDecodeError):
-            print('Ошибка декодирования сообщения')
+            LOGGER.error('Не удалось декодировать полученную Json строку.')
+        except ConnectionRefusedError:
+            LOGGER.critical(f'Не удалось подключиться к серверу {self.server_address}:{self.server_port}, '
+                            f'конечный компьютер отверг запрос на подключение.')
 
     @staticmethod
     def server_answer(message):
+        LOGGER.debug(f'Разбор сообщения от сервера: {message}')
         if RESPONSE in message:
             if message[RESPONSE] == 200:
                 return f'200 : OK\nADDRESS : {message[ADDRESS]}\nPORT : {message[PORT]}'
@@ -52,7 +62,7 @@ class Client:
             ADDRESS: self.server_address,
             PORT: self.server_port
         }
-
+        LOGGER.debug(f'Сформировано {PRESENCE} сообщение для пользователя {account_name}')
         return out
 
 

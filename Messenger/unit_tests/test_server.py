@@ -6,7 +6,7 @@ import sys
 import os
 import unittest
 
-sys.path.append(os.path.join(os.getcwd(), '..'))
+sys.path.append(os.path.join(os.getcwd(), '../../Messenger'))
 
 
 class TestServer(unittest.TestCase):
