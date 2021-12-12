@@ -1,3 +1,5 @@
+import logging
+
 DEFAULT_IP_ADDRESS = '127.0.0.1'
 
 DEFAULT_PORT = 7777
@@ -22,3 +24,7 @@ RESPONSE = 'response'
 ERROR = 'error'
 ADDRESS = 'address'
 PORT = 'port'
+
+"""LOGGING"""
+
+LOGGING_LEVEL = logging.DEBUG

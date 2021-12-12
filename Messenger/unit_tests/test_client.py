@@ -3,7 +3,7 @@ import sys
 import os
 import unittest
 
-sys.path.append(os.path.join(os.getcwd(), '..'))
+sys.path.append(os.path.join(os.getcwd(), '../../Messenger'))
 
 from сommon.variables import RESPONSE, ERROR, USER, ACCOUNT_NAME, TIME, ACTION, PRESENCE, ADDRESS, PORT
 from ..client import Client
