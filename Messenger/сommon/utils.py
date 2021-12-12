@@ -3,7 +3,10 @@ import json
 import json
 from .variables import MAX_PACKAGE_LENGTH, ENCODING
 
+from Messenger.decos import log
 
+
+@log
 def get_message(client):
     '''
     Утилита приёма и декодирования сообщения
@@ -22,6 +25,7 @@ def get_message(client):
     raise ValueError
 
 
+@log
 def send_message(sock, message):
     '''
     Утилита кодирования и отправки сообщения
