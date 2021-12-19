@@ -1,7 +1,7 @@
 """Ошибки"""
 
 
-class IncorrectDataRecivedError(Exception):
+class IncorrectDataReceivedError(Exception):
     """Исключение  - некорректные данные получены от сокета"""
     def __str__(self):
         return 'Принято некорректное сообщение от удалённого компьютера.'

@@ -3,7 +3,7 @@
 import json
 import sys
 from Messenger_new.common.variables import MAX_PACKAGE_LENGTH, ENCODING
-from Messenger_new.errors import IncorrectDataRecivedError, NonDictInputError
+from Messenger_new.errors import IncorrectDataReceivedError, NonDictInputError
 from Messenger_new.decos import log
 sys.path.append('../')
 
@@ -22,8 +22,8 @@ def get_message(client):
         response = json.loads(json_response)
         if isinstance(response, dict):
             return response
-        raise IncorrectDataRecivedError
-    raise IncorrectDataRecivedError
+        raise IncorrectDataReceivedError
+    raise IncorrectDataReceivedError
 
 
 @log
