@@ -2,22 +2,18 @@
 import os
 import socket
 import configparser
-import sys
 import argparse
-import logging
 import select
 import threading
-import time
 from Messenger_new.common.variables import *
 from Messenger_new.common.utils import *
-from decos import log
+from Messenger_new.common.decos import log
 from descryptors import Port
 from metaclasses import ServerMaker
-from server_database import ServerStorage
+from Messenger_new.server.server_database import ServerStorage
 from PyQt5.QtWidgets import QApplication, QMessageBox
 from PyQt5.QtCore import QTimer
-from server_gui import MainWindow, gui_create_model, HistoryWindow, create_stat_model, ConfigWindow
-from PyQt5.QtGui import QStandardItemModel, QStandardItem
+from Messenger_new.server.server_gui import MainWindow, gui_create_model, HistoryWindow, create_stat_model, ConfigWindow
 
 # Инициализация логирования сервера.
 LOGGER = logging.getLogger('server')
@@ -236,7 +232,7 @@ def main():
     # Загрузка параметров командной строки, если нет параметров, то задаём значения по умолчанию.
 
     dir_path = os.path.dirname(os.path.realpath(__file__))
-    config.read(f"{dir_path}/{'server.ini'}")
+    config.read(f"{dir_path}/server/{'server.ini'}")
 
     listen_address, listen_port = arg_parser(
         config['SETTINGS']['Default_port'], config['SETTINGS']['Listen_Address'])
@@ -309,7 +305,7 @@ def main():
             if 1023 < port < 65536:
                 config['SETTINGS']['Default_port'] = str(port)
                 print(port)
-                with open('server.ini', 'w') as conf:
+                with open('server/server.ini', 'w') as conf:
                     config.write(conf)
                     message.information(
                         config_window, 'OK', 'Настройки успешно сохранены!')
