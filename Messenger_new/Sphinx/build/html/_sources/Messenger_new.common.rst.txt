@@ -1,0 +1,61 @@
+Messenger\_new.common package
+=============================
+
+Submodules
+----------
+
+Messenger\_new.common.decos module
+----------------------------------
+
+.. automodule:: Messenger_new.common.decos
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Messenger\_new.common.descryptors module
+----------------------------------------
+
+.. automodule:: Messenger_new.common.descryptors
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Messenger\_new.common.errors module
+-----------------------------------
+
+.. automodule:: Messenger_new.common.errors
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Messenger\_new.common.metaclasses module
+----------------------------------------
+
+.. automodule:: Messenger_new.common.metaclasses
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Messenger\_new.common.utils module
+----------------------------------
+
+.. automodule:: Messenger_new.common.utils
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Messenger\_new.common.variables module
+--------------------------------------
+
+.. automodule:: Messenger_new.common.variables
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: Messenger_new.common
+   :members:
+   :undoc-members:
+   :show-inheritance:

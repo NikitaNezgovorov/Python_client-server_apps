@@ -1,0 +1,49 @@
+Messenger\_new package
+======================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   Messenger_new.client
+   Messenger_new.common
+   Messenger_new.logs
+   Messenger_new.server
+   Messenger_new.unit_tests
+
+Submodules
+----------
+
+Messenger\_new.client module
+----------------------------
+
+.. automodule:: Messenger_new.client
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Messenger\_new.launcher module
+------------------------------
+
+.. automodule:: Messenger_new.launcher
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Messenger\_new.server module
+----------------------------
+
+.. automodule:: Messenger_new.server
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: Messenger_new
+   :members:
+   :undoc-members:
+   :show-inheritance:
