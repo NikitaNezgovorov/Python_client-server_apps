@@ -2,8 +2,8 @@
 
 import sys
 import logging
-import logs.config_server_log
-import logs.config_client_log
+import Messenger_new.logs.config_server_log
+import Messenger_new.logs.config_client_log
 
 # метод определения модуля, источника запуска.
 # Метод find () возвращает индекс первого вхождения искомой подстроки,

@@ -3,8 +3,8 @@
 import json
 import sys
 from Messenger_new.common.variables import MAX_PACKAGE_LENGTH, ENCODING
-from Messenger_new.errors import IncorrectDataReceivedError, NonDictInputError
-from Messenger_new.decos import log
+from Messenger_new.common.errors import IncorrectDataReceivedError, NonDictInputError
+from Messenger_new.common.decos import log
 sys.path.append('../')
 
 
