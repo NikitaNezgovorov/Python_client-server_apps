@@ -188,3 +188,34 @@ hi
 12455
 2021-12-12 11:03:45,394 CRITICAL client.py Потеряно соединение с сервером.
 2021-12-12 11:03:45,395 DEBUG decos.py Была вызвана функция message_from_server c параметрами (<socket.socket fd=284, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 55639), raddr=('127.0.0.1', 7777)>, 'test3'), {}. Вызов из модуля __main__
+2022-01-15 14:11:02,222 DEBUG decos.py Была вызвана функция arg_parser c параметрами (), {}. Вызов из модуля __main__
+2022-01-16 13:27:15,845 DEBUG decos.py Была вызвана функция arg_parser c параметрами ('7777', ''), {}. Вызов из модуля __main__
+2022-01-16 13:59:15,948 DEBUG decos.py Была вызвана функция arg_parser c параметрами (), {}. Вызов из модуля __main__
+2022-01-16 13:59:19,245 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: NIck
+2022-01-16 13:59:21,276 CRITICAL client.py Не удалось подключиться к серверу 127.0.0.1:7777, конечный компьютер отверг запрос на подключение.
+2022-01-16 13:59:37,823 DEBUG decos.py Была вызвана функция arg_parser c параметрами ('7777', ''), {}. Вызов из модуля __main__
+2022-01-16 13:59:42,878 DEBUG decos.py Была вызвана функция arg_parser c параметрами (), {}. Вызов из модуля __main__
+2022-01-16 13:59:45,924 INFO client.py Запущен клиент с параметрами: адрес сервера: 127.0.0.1, порт: 7777, имя пользователя: Nick
+2022-01-16 13:59:45,925 DEBUG client.py Сформировано presence сообщение для пользователя Nick
+2022-01-16 13:59:45,925 DEBUG decos.py Была вызвана функция create_presence c параметрами ('Nick',), {}. Вызов из модуля __main__
+2022-01-16 13:59:45,925 DEBUG decos.py Была вызвана функция send_message c параметрами (<socket.socket fd=576, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 49154), raddr=('127.0.0.1', 7777)>, {'action': 'presence', 'time': 1642330785.9250317, 'user': {'account_name': 'Nick'}}), {}. Вызов из модуля Messenger_new.common.utils
+2022-01-16 13:59:45,925 DEBUG decos.py Была вызвана функция get_message c параметрами (<socket.socket fd=1316, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 49154)>,), {}. Вызов из модуля Messenger_new.common.utils
+2022-01-16 13:59:45,965 DEBUG decos.py Была вызвана функция send_message c параметрами (<socket.socket fd=1316, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 49154)>, {'response': 200}), {}. Вызов из модуля Messenger_new.common.utils
+2022-01-16 13:59:45,965 DEBUG decos.py Была вызвана функция get_message c параметрами (<socket.socket fd=576, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 49154), raddr=('127.0.0.1', 7777)>,), {}. Вызов из модуля Messenger_new.common.utils
+2022-01-16 13:59:45,965 DEBUG client.py Разбор приветственного сообщения от сервера: {'response': 200}
+2022-01-16 13:59:45,965 DEBUG decos.py Была вызвана функция process_response_ans c параметрами ({'response': 200},), {}. Вызов из модуля __main__
+2022-01-16 13:59:45,965 INFO client.py Установлено соединение с сервером. Ответ сервера: 200 : OK
+2022-01-16 13:59:46,019 DEBUG client.py Запрос списка известных пользователей Nick
+2022-01-16 13:59:46,019 DEBUG decos.py Была вызвана функция send_message c параметрами (<socket.socket fd=576, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 49154), raddr=('127.0.0.1', 7777)>, {'action': 'get_users', 'time': 1642330786.019577, 'account_name': 'Nick'}), {}. Вызов из модуля Messenger_new.common.utils
+2022-01-16 13:59:46,474 DEBUG decos.py Была вызвана функция get_message c параметрами (<socket.socket fd=1316, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 49154)>,), {}. Вызов из модуля Messenger_new.common.utils
+2022-01-16 13:59:46,475 DEBUG decos.py Была вызвана функция send_message c параметрами (<socket.socket fd=1316, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 49154)>, {'response': 202, 'data_list': ['client_1', 'client_2', 'Nick']}), {}. Вызов из модуля Messenger_new.common.utils
+2022-01-16 13:59:46,475 DEBUG decos.py Была вызвана функция get_message c параметрами (<socket.socket fd=576, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 49154), raddr=('127.0.0.1', 7777)>,), {}. Вызов из модуля Messenger_new.common.utils
+2022-01-16 13:59:46,490 DEBUG client.py Запрос контакт листа для пользователя Nick
+2022-01-16 13:59:46,490 DEBUG client.py Сформирован запрос {'action': 'get_contacts', 'time': 1642330786.4900987, 'user': 'Nick'}
+2022-01-16 13:59:46,491 DEBUG decos.py Была вызвана функция send_message c параметрами (<socket.socket fd=576, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 49154), raddr=('127.0.0.1', 7777)>, {'action': 'get_contacts', 'time': 1642330786.4900987, 'user': 'Nick'}), {}. Вызов из модуля Messenger_new.common.utils
+2022-01-16 13:59:46,989 DEBUG decos.py Была вызвана функция get_message c параметрами (<socket.socket fd=1316, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 49154)>,), {}. Вызов из модуля Messenger_new.common.utils
+2022-01-16 13:59:46,993 DEBUG decos.py Была вызвана функция send_message c параметрами (<socket.socket fd=1316, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 7777), raddr=('127.0.0.1', 49154)>, {'response': 202, 'data_list': []}), {}. Вызов из модуля Messenger_new.common.utils
+2022-01-16 13:59:46,993 DEBUG decos.py Была вызвана функция get_message c параметрами (<socket.socket fd=576, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 49154), raddr=('127.0.0.1', 7777)>,), {}. Вызов из модуля Messenger_new.common.utils
+2022-01-16 13:59:46,994 DEBUG client.py Получен ответ {'response': 202, 'data_list': []}
+2022-01-16 13:59:46,996 DEBUG client.py Запущены процессы
+2022-01-16 14:00:31,566 CRITICAL client.py Потеряно соединение с сервером.
